@@ -4,6 +4,7 @@
 
 use crate::params::Object;
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 
 /// The resource representing a Stripe "cash_balance".
 ///
@@ -14,7 +15,7 @@ pub struct CashBalance {
     ///
     /// You cannot delete a customer with any cash balances, even if the balance is 0.
     /// Amounts are represented in the [smallest currency unit](https://stripe.com/docs/currencies#zero-decimal).
-    pub available: Option<i64>,
+    pub available: Option<HashMap<String, i64>>,
 
     /// The ID of the customer whose cash balance this object represents.
     pub customer: String,

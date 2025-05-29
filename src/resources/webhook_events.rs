@@ -90,6 +90,8 @@ pub enum EventType {
     CreditNoteVoided,
     #[serde(rename = "customer.created")]
     CustomerCreated,
+    #[serde(rename = "customer_cash_balance_transaction.created")]
+    CustomerCashBalanceTransactionCreated,
     #[serde(rename = "customer.deleted")]
     CustomerDeleted,
     #[serde(rename = "customer.discount.created")]
@@ -444,6 +446,8 @@ pub enum EventObject {
     CheckoutSession(CheckoutSession),
     Coupon(Coupon),
     Customer(Customer),
+    CustomerCashBalanceTransaction(CustomerCashBalanceTransaction),
+    CashBalance(CashBalance),
     Discount(Discount),
     Dispute(Dispute),
     File(File),
